@@ -1,8 +1,12 @@
 import json
 
+import os 
+
 import psycopg2
 
 import logging
+
+from utils.db_credentials import DBCredentials
 
 logging.basicConfig()
 log = logging.getLogger()
@@ -16,12 +20,19 @@ def claim_gift(event, context):
 
     log.info(f"item_id: {item_id}")
 
-    conn = psycopg2.connect(
-        dbname="wishlist",
-        user="postgres",
-        password="docker",
-        host="localhost",
-        port="5432",
-    )
+    credentials = DBCredentials()
+
+    conn = psycopg2.connect(**credentials.credentials)
 
     cur = conn.cursor()
+
+    cur.execute("update items set reserved = true where id = %s", (item_id,))
+
+    cur.close()
+    conn.commit()
+    conn.close
+    response = {
+        "statusCode": 200
+    }
+
+    return response
