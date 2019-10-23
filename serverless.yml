@@ -14,8 +14,8 @@ functions:
           method: get
 
   claimGift:
-      handler: functions/wishlist_handler.claim_gift
-      events:
-          - http:
-              path: claim/{id}
-              method: post
+    handler: functions/wishlist_handler.claim_gift
+    events:
+      - http:
+          path: claim/{id}
+          method: post
