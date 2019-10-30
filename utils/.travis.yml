@@ -9,7 +9,7 @@ install:
   - npm install
 
 script:
-  - echo 'Not tests for now''
+  - echo 'Not tests for now'
 
 deploy:
   skip_cleanup: true
