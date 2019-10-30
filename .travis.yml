@@ -14,6 +14,6 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: serverless deploy --user $user --password $password
+  script: serverless deploy --user $db_user --password $db_password
   on:
     all_branches: true
