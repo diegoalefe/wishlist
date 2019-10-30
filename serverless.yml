@@ -11,8 +11,8 @@ provider:
     database: ${opt:database}
     user: ${opt:user}
     password: ${opt:password}
-    host: ${opt:host}
-    port: ${opt:port}
+    host: 
+    port: 5432
 
 provider:
   name: aws
