@@ -14,4 +14,6 @@ def hello(event, context):
         "body": nome
     }
 
+    print(event)
+
     return response

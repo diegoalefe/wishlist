@@ -8,7 +8,7 @@ class TestBase(object):
     def setup(self):
         os.environ["dbname"] = 'wishlist'
         os.environ["user"] = 'alefe'
-        os.environ["password"] = 'aem2007d'
+        os.environ["password"] = ''
         os.environ["host"] = 'localhost'
         os.environ["port"] = '5432'
 
