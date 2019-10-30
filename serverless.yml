@@ -7,6 +7,17 @@ provider:
   name: aws
   runtime: python3.7
   versionFunctions: false
+  environment:
+    database: ${opt:database}
+    user: ${opt:user}
+    password: ${opt:password}
+    host: ${opt:host}
+    port: ${opt:port}
+
+provider:
+  name: aws
+  runtime: python3.7
+  versionFunctions: false
 
 functions:
   hello:
